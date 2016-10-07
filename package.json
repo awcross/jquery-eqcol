@@ -1,0 +1,57 @@
+{
+  "name": "jquery-eqcol",
+  "version": "0.0.0",
+  "description": "Equal effing columns with jQuery",
+  "license": "MIT",
+  "repository": "awcross/jquery-eqcol",
+  "author": {
+    "name": "Alex Cross",
+    "url": "alexcross.io"
+  },
+  "main": "dist/jquery-eqcol.js",
+  "keywords": [
+    "equal",
+    "columns",
+    "row",
+    "height",
+    "browser",
+    "bootstrap",
+    "foundation",
+    "match",
+    "jquery"
+  ],
+  "scripts": {
+    "build": "npm test && npm run bundle && npm run minify",
+    "bundle": "rollup -c",
+    "minify": "node_modules/.bin/uglifyjs dist/jquery-eqcol.js > dist/jquery-eqcol.min.js -m",
+    "test": "xo"
+  },
+  "dependencies": {
+    "eqcol": "^1.2.2"
+  },
+  "devDependencies": {
+    "babel-core": "^6.14.0",
+    "babel-preset-es2015-rollup": "^1.2.0",
+    "rollup-plugin-babel": "^2.6.1",
+    "rollup-plugin-commonjs": "^5.0.4",
+    "rollup-plugin-node-resolve": "^2.0.0",
+    "uglify-js": "^2.7.3",
+    "xo": "*"
+  },
+  "babel": {
+    "presets": [
+      "es2015-rollup"
+    ]
+  },
+  "xo": {
+    "esnext": true,
+    "envs": [
+      "browser",
+      "es6",
+      "jquery"
+    ],
+    "rules": {
+      "padded-blocks": 0
+    }
+  }
+}
